@@ -1,24 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import useFetchPokemon from "./logic/useFetchPokemon";
+import Pokedex from "./components/Pokedex";
+import useFetchTypes from "./logic/useFetchTypes";
+import useFetchPokemonsByType from "./logic/useFetchPokemonsByType";
+import "./App.css";
 
 function App() {
+
+  // Load pokemons
+  const { pokemon } = useFetchPokemon();
+  // Load types for select
+  const { types } = useFetchTypes();
+  // Filter for type
+  const { selectedType, setSelectedType, pokemonByType } = useFetchPokemonsByType();
+
+  // Drop down options
+  const list = types.map((value) => <option key={value.name} value={value.url}>{value.name.toUpperCase()}</option>);
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* Select type */}
+      <select value={selectedType} onChange={(ev) => {
+        setSelectedType(ev.target.value);
+      }}>
+        <option value=''>Select a type</option>
+        {list}
+      </select>
+
+      {/* Renderizado condicional */}
+      { !selectedType
+        ? <Pokedex pokemon={pokemon} /> 
+        : <Pokedex pokemon={pokemonByType} />
+      }
+
     </div>
   );
 }

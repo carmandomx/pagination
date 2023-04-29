@@ -1,38 +1,119 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  text-align: center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  background: linear-gradient(45deg, #d3eaf2, #d3eaf2);
+  background: linear-gradient(45deg, #78888e, #69b8d5);
 }
 
-.App-link {
-  color: #61dafb;
+/* Structure of cards page */
+.Pokedex {
+  margin-top: 16px;
+  padding: 8px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 790px;
+  box-sizing: border-box;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Size and color of card */
+.div-card {
+  width: 250px;
+  height: 200px;
+  background-color: #ccc;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #d3eaf2, #d3eaf2);
+  background: linear-gradient(45deg, #0f3c4c, #2596be);
+}
+
+/* Sprite and background */
+.sprite {
+  background-image: url('./assets/pokeball.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+h5, h6 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+/* Type colors */
+.typeContainer {
+  border-radius: 5px;
+}
+
+.normal {
+  background-color: #A8A77A;
+}
+
+.fire {
+  background-color: #EE8130;
+}
+
+.water {
+  background-color: #6390F0;
+}
+
+.electric {
+  background-color: #F7D02C;
+}
+
+.grass {
+  background-color: #7AC74C;
+}
+
+.ice {
+  background-color: #96D9D6;
+}
+
+.fighting {
+  background-color: #C22E28;
+}
+
+.poison {
+  background-color: #A33EA1;
+}
+
+.ground {
+  background-color: #E2BF65;
+}
+
+.flying {
+  background-color: #A98FF3;
+}
+
+.psychic {
+  background-color: #F95587;
+}
+
+.bug {
+  background-color: #A6B91A;
+}
+
+.rock {
+  background-color: #B6A136;
+}
+
+.ghost {
+  background-color: #735797;
+}
+
+.dragon {
+  background-color: #6F35FC;
+}
+
+.dark {
+  background-color: #705746;
+}
+
+.steel {
+  background-color: #B7B7CE;
+}
+
+.fairy {
+  background-color: #D685AD;
 }
