@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import useFetchPokemon from "./logic/useFetchPokemon";
+import Pokedex from "./components/Pokedex";
+import useFetchTypes from "./logic/useFetchTypes";
+import "./App.css";
+import useFetchPokemonByType from "./logic/useFetchPokemonByType";
 
-function App() {
+const App = () => {
+  const {pokemon} = useFetchPokemon();
+  const{types} = useFetchTypes();
+  const {selectedType, setSelectedType, pokemonByType} = useFetchPokemonByType();
+
+  const list = types.map((value)=> <option key={value.name} value={value.url}>{value.name.toUpperCase()}</option>)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <div className="App">
+    <select value={selectedType} onChange={(e)=> setSelectedType(e.target.value)} >
+      <option value="">Select a type</option>
+      {list}
+    </select>
+    {selectedType ? (<Pokedex pokemon={pokemonByType}/>) : ( <Pokedex pokemon={pokemon}/>)}
+  </div>
   );
-}
+};
 
 export default App;
