@@ -14,13 +14,20 @@ interface IPokeType{
   slot : number;
   type: IInfoPokemon;
 }
-export interface IPokemonDetails{
-    order: number;
-    sprites: {
-      front_default : string;
-    }
-    types: IPokeType[];
-  }
+
+export interface IPokemonDetails {
+  order: number;
+  height: number;
+  weight: number;
+  sprites: {
+    front_default: string;
+  };
+  types: IPokeType[];
+  species: {
+    url: string;
+  };
+}
+
 
 export interface ITypeDetails{
   pokemon : {
