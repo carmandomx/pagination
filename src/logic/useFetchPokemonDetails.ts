@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { IPokemonDetails } from "../interfaces/interfaces";
 
 const useFetchPokemonDetails = (url:string) =>{
-    const [order,setOrder] = useState(0); 
+    const [id,setId] = useState(0); 
     const [sprite, setSprite] = useState("");
     const [types, setTypes] = useState<string[]>([]);
     const [height, setHeight] = useState(0);
@@ -15,7 +15,7 @@ const useFetchPokemonDetails = (url:string) =>{
             const req = await fetch(url);
             const data: IPokemonDetails = await req.json()
 
-            setOrder(data.order)
+            setId(data.id)
             setSprite(data.sprites.front_default);
             const originalData = data.types;
             const newData = originalData.map(({type}) => type.name);
@@ -34,7 +34,7 @@ const useFetchPokemonDetails = (url:string) =>{
 
     },[url]);
     
-    return { order, sprite, types, height, weight, generation };
+    return { id, sprite, types, height, weight, generation };
 }
 
 export default useFetchPokemonDetails;

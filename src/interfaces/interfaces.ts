@@ -1,37 +1,37 @@
 export interface IInfoPokemon {
-    name: string;
-    url: string;
+  name: string;
+  url: string;
 }
-  
+
 export interface IListResults<T> {
-    count: number;
-    next: string;
-    previous: string;
-    results: T[];
-  }
+  count: number;
+  next: string;
+  previous: string;
+  results: T[];
+}
 
 interface IPokeType{
-  slot : number;
-  type: IInfoPokemon;
+slot : number;
+type: IInfoPokemon;
 }
 
 export interface IPokemonDetails {
-  order: number;
-  height: number;
-  weight: number;
-  sprites: {
-    front_default: string;
-  };
-  types: IPokeType[];
-  species: {
-    url: string;
-  };
+id: number;
+height: number;
+weight: number;
+sprites: {
+  front_default: string;
+};
+types: IPokeType[];
+species: {
+  url: string;
+};
 }
 
 
 export interface ITypeDetails{
-  pokemon : {
-    pokemon : IInfoPokemon
-    slot : number
-  }[]
+pokemon : {
+  pokemon : IInfoPokemon
+  slot : number
+}[]
 }
