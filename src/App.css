@@ -6,6 +6,8 @@
   color: white;
   background: linear-gradient(45deg, #d3eaf2, #d3eaf2);
   background: linear-gradient(45deg, #78888e, #69b8d5);
+  font-family: 'VT323', monospace;
+  font-size: 24px;
 }
 
 /* Structure of cards page */
@@ -16,6 +18,89 @@
   gap: 16px;
   max-width: 790px;
   box-sizing: border-box;
+}
+
+/* Title */
+.pokeTitle {
+  background-color: red;
+  width: 100%;
+  height: 50px;
+  font-size: 32px;
+}
+
+/* dropdown */
+.custom-select {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  color: #888;
+  margin-top: 25px;
+}
+
+.custom-select select {
+  display: block;
+  width: 250px;
+  min-height: 35px;
+  background: #cbe7ff;
+  border-radius: 3px;
+  border: 2px solid #2196F3;
+  outline: none;
+  padding: 0 20px 0 10px;
+  margin-top: 5px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+}
+
+.custom-select::after {
+  content: '';
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: #222;
+  display: inline-block;
+  border-radius: 2px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.custom-select .selector-options {
+  list-style: none;
+  padding: 5px 0;
+  margin: 0;
+  background: #11436b;
+  color: #fff;
+  border-radius: 4px;
+  z-index: 1;
+  width: 96%;
+  position: absolute;
+  left: 2%;
+  top: 35%;
+}
+
+.custom-select .selector-options li {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.custom-select .selector-options li:hover {
+  background: #03A9F4;
+}
+
+/* Search bar */
+.Bar:focus {
+  border: 3px solid #555;
+}
+
+.Bar {
+  width: 235px;
 }
 
 /* Responsive */
@@ -39,7 +124,7 @@
 /* Size and color of card */
 .div-card {
   width: 250px;
-  height: 250px;
+  height: 270px;
   background-color: #ccc;
   border-radius: 8px;
   background: linear-gradient(45deg, #d3eaf2, #d3eaf2);
@@ -62,6 +147,15 @@
 h5, h6 {
   margin-top: 0;
   margin-bottom: 5px;
+}
+
+/* Poke Data */
+.pokeDetails {
+  margin-left: 50px;
+  width: 20vh;
+  background-color: #f7f1f1;
+  color: black;
+  border-radius: 8px;
 }
 
 /* Type colors */

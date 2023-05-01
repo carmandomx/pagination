@@ -18,7 +18,7 @@ interface IPokeType {
 export interface IPokemonDetails {
     height: number;
     weight: number;
-    order: number;
+    id: number;
     sprites: {
         front_default: string;
     }
@@ -38,9 +38,4 @@ export interface ITypeDetails {
         pokemon: IInfoPokemon,
         slot: number;
     }[]
-}
-
-export interface IExtraData {
-    weight: number;
-    height: number;
 }
