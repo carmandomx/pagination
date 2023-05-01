@@ -21,6 +21,7 @@ height: number;
 weight: number;
 sprites: {
   front_default: string;
+  front_shiny:string;
 };
 types: IPokeType[];
 species: {

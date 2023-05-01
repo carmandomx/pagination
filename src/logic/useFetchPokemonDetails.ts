@@ -4,6 +4,7 @@ import { IPokemonDetails } from "../interfaces/interfaces";
 const useFetchPokemonDetails = (url:string) =>{
     const [id,setId] = useState(0); 
     const [sprite, setSprite] = useState("");
+    const [shinySprite, setShinySprite] = useState("");
     const [types, setTypes] = useState<string[]>([]);
     const [height, setHeight] = useState(0);
     const [weight, setWeight] = useState(0);
@@ -17,6 +18,7 @@ const useFetchPokemonDetails = (url:string) =>{
 
             setId(data.id)
             setSprite(data.sprites.front_default);
+            setShinySprite(data.sprites.front_shiny);
             const originalData = data.types;
             const newData = originalData.map(({type}) => type.name);
             setTypes(newData);
@@ -34,7 +36,7 @@ const useFetchPokemonDetails = (url:string) =>{
 
     },[url]);
     
-    return { id, sprite, types, height, weight, generation };
+    return { id, sprite, types, height, weight, generation, shinySprite };
 }
 
 export default useFetchPokemonDetails;
