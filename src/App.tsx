@@ -3,10 +3,9 @@ import useFetchPokemon from "./logic/useFetchPokemon";
 import Pokedex from "./components/Pokedex";
 import useFetchTypes from "./logic/useFetchTypes";
 import useFetchPokemonsByType from "./logic/useFetchPokemonsByType";
-import { SearchPokemon } from "./components/SearchPokemon";
-import "./App.css";
 import useSearchBar from "./logic/useSearchBar";
 import { Banner } from "./components/Banner";
+import "./App.css";
 
 function App() {
 
