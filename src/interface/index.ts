@@ -16,11 +16,16 @@ interface IPokeType {
 }
 
 export interface IPokemonDetails {
+    height: number;
+    weight: number;
     order: number;
     sprites: {
         front_default: string;
     }
-    types: IPokeType[]
+    types: IPokeType[];
+    species: {
+        url: string;
+    };
 }
 
 export interface IIdAndName {
@@ -33,4 +38,9 @@ export interface ITypeDetails {
         pokemon: IInfoPokemon,
         slot: number;
     }[]
+}
+
+export interface IExtraData {
+    weight: number;
+    height: number;
 }

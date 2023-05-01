@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
 import { IPokemonDetails } from "../interface";
 
-// sprite
-// no. pokedex
-// types
-
-const URL = 'https://pokeapi.co/api/v2/pokemon/1/'
 const useFetchPokemonDetails = (url: string) => {
     const [order, setOrder] = useState(0);
     const [sprite, setSprite] = useState("");
     const [types, setTypes] = useState<string[]>([]);
+    const [height, setHeight] = useState(0);
+    const [weight, setWeight] = useState(0);
+    const [gen, setGen] = useState(0);
 
     useEffect(() => {
 
@@ -22,12 +20,21 @@ const useFetchPokemonDetails = (url: string) => {
             const originalData = data.types;
             const newData = originalData.map(({ type }) => type.name);
             setTypes(newData);
+            setHeight(data.height);
+            setWeight(data.weight);
+
+            // Gen
+            const pokeInfoReq = await fetch(data.species.url);
+            const speciesData = await pokeInfoReq.json();
+            const genReq = await fetch(speciesData.generation.url);
+            const genData = await genReq.json();
+            setGen(genData.id);
         }
         fn().catch(console.error);
 
     }, [url])
 
-    return { order, sprite, types }
+    return { order, sprite, types, height, weight, gen }
 }
 
 export default useFetchPokemonDetails;

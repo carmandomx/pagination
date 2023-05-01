@@ -8,7 +8,8 @@ type Props = {
 };
 
 const Pokemon = ({ name, url }: Props) => {
-  const { order, sprite, types } = useFetchPokemonDetails(url);
+  const { order, sprite, types, height, weight, gen } = useFetchPokemonDetails(url);
+  
   return (
     // Pokemon Card
     <div className="div-card">
@@ -23,6 +24,9 @@ const Pokemon = ({ name, url }: Props) => {
         <h6>No. {order}</h6>
         {/* Type of Pokemon */}
         <PokemonTypes types={types} />
+        <h6>Height: {height / 10} m</h6>
+        <h6>Weight: {weight / 10} kg</h6>
+        <h6>Generation: {gen} </h6>
       </div>
 
     </div>

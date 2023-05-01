@@ -3,6 +3,7 @@ import useFetchPokemon from "./logic/useFetchPokemon";
 import Pokedex from "./components/Pokedex";
 import useFetchTypes from "./logic/useFetchTypes";
 import useFetchPokemonsByType from "./logic/useFetchPokemonsByType";
+import { SearchPokemon } from "./components/SearchPokemon";
 import "./App.css";
 
 function App() {
@@ -18,7 +19,6 @@ function App() {
   const list = types.map((value) => <option key={value.name} value={value.url}>{value.name.toUpperCase()}</option>);
 
 
-
   return (
     <div className="App">
       {/* Select type */}
@@ -28,6 +28,9 @@ function App() {
         <option value=''>Select a type</option>
         {list}
       </select>
+
+      {/* Search box */}
+      <SearchPokemon />
 
       {/* Renderizado condicional */}
       { !selectedType

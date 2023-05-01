@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { IIdAndName, IInfoPokemon, IListResults } from "../interface";
+import { IInfoPokemon, IListResults } from "../interface";
 
 const useFetchTypes = () => {
     const [types, setTypes] = useState<IInfoPokemon[]>([]);

@@ -13,20 +13,43 @@
   margin-top: 16px;
   padding: 8px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   max-width: 790px;
   box-sizing: border-box;
 }
 
+/* Responsive */
+.Pokedex {
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 450px) {
+  .Pokedex{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 786px) {
+  .Pokedex{
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /* Size and color of card */
 .div-card {
   width: 250px;
-  height: 200px;
+  height: 250px;
   background-color: #ccc;
   border-radius: 8px;
   background: linear-gradient(45deg, #d3eaf2, #d3eaf2);
   background: linear-gradient(45deg, #0f3c4c, #2596be);
+}
+
+/* div-card on hover */
+.div-card:hover {
+  background: linear-gradient(45deg, #d3eaf2, #d3eaf2);
+  background: linear-gradient(45deg, #E90064, #B3005E);
 }
 
 /* Sprite and background */
