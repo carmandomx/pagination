@@ -7,6 +7,7 @@ import Pagination from "./components/Pagination";
 import "./App.css";
 import logo from "./images/pokedexlogo.png";
 import useFetchPokemonByTypes from "./logic/useFetchPokemonbyType";
+import { IPokemonTypesFetch } from "./interfaces";
 
 function App() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -14,12 +15,19 @@ function App() {
   const { types } = useFetchTypes();
   const { selectedType, setSelectedType, pokemonByType } =
     useFetchPokemonByTypes();
+  const [searchTerm, setSearchTerm] = useState("");
 
   const listOfTypes = types.map((value) => (
     <option key={value.name} value={value.url}>
       {value.name[0].toUpperCase() + value.name.slice(1)}
     </option>
   ));
+
+  const filteredPokemon = pokemon.filter(
+    (poke) =>
+      poke.name.includes(searchTerm.toLowerCase()) ||
+      poke.id?.toString().includes(searchTerm)
+  );
 
   return (
     <div className="App">
@@ -29,6 +37,14 @@ function App() {
           alt="Pokedex Logo"
           className="logo"
           onClick={() => window.location.reload()}
+        />
+      </div>
+      <div className="input">
+        <input
+          type="text"
+          placeholder="Search by name"
+          value={searchTerm}
+          onChange={(event) => setSearchTerm(event.target.value)}
         />
       </div>
       <div className="selectDD">
@@ -41,11 +57,10 @@ function App() {
           {listOfTypes}
         </select>
       </div>
-      {selectedType ? (
-        <Pokedex pokemon={pokemonByType} />
-      ) : (
-        <Pokedex pokemon={pokemon} />
-      )}
+      <div>
+        <Pokedex pokemon={selectedType ? pokemonByType : filteredPokemon} />
+      </div>
+
       <div className="pagination">
         <Pagination
           currentPage={currentPage}

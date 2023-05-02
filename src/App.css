@@ -1,6 +1,20 @@
 .App {
   text-align: center;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.input {
+  margin: 0px;
+}
+
+input {
+  height: 2rem;
+  width: 24rem;
+  font-size: 1rem;
+  border: 3px solid black;
+  border-radius: 4px;
+  margin: 8px;
+  margin-top: 30px;
 }
 
 .select {
@@ -13,19 +27,19 @@
 }
 
 .select:hover {
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 
 button {
   background-color: lightgrey;
   font-size: 1rem;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   border-radius: 4px;
   margin: 2px;
 }
 
-.logo{
+.logo {
   height: 100px;
   margin-top: 24px;
   cursor: pointer;

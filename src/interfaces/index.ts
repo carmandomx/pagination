@@ -3,6 +3,7 @@ import { type } from "os";
 export interface IInfoPokemon {
   name: string;
   url: string;
+  id?: number;
 }
 
 export interface IListResults<T> {
