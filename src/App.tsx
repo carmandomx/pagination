@@ -1,24 +1,65 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import useFetchPokemon from "./logic/useFetchPokemo";
+import "./App.css";
+import Pokedex from "./components/Pokedex";
+import useFetchTypes from "./logic/useFetchTypes";
+import useFetchPokemonsByType from "./logic/useFetchPokemonsByType";
+import useFetchPokemonBySearch from "./logic/useFetchPokemonBySearch";
+import SearchPokemon from "./components/SearchBar";
+import Pagination from "./components/Pagination";
 
 function App() {
+  const [page, setPage] = useState(1);
+  const [searchValue, setSearchValue] = useState("");
+
+  const { searchPokemon } = useFetchPokemonBySearch(searchValue);
+  const { pokemon } = useFetchPokemon(page);
+  const { types } = useFetchTypes();
+  const { selectedType, setSelectedType, pokemonByType } =
+    useFetchPokemonsByType();
+  const list = types.map((value) => (
+    <option key={value.name} value={value.url}>
+      {value.name.toUpperCase()}
+    </option>
+  ));
+
+  const handleSearchChange = (search: string) => {
+    setSearchValue(search);
+  };
+  const handlePageChange = (pageNumber: number) => {
+    if (page !== pageNumber) {
+      setPage(pageNumber);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="App-header">
+      <header>
+        <select
+          value={selectedType}
+          onChange={(ev) => setSelectedType(ev.target.value)}
         >
-          Learn React
-        </a>
+          <option> Select a type</option>
+          {list}
+        </select>
+
+        <SearchPokemon onButtonClick={handleSearchChange} />
       </header>
+
+      {!selectedType ? (
+        searchValue ? (
+          <Pokedex pokemon={searchPokemon} />
+        ) : (
+          <>
+          <Pokedex pokemon={pokemon} />
+          <Pagination onPageChange={handlePageChange} />
+          
+        </>
+        )
+      ) : (
+        <Pokedex pokemon={pokemonByType} />
+      )}
+
     </div>
   );
 }
