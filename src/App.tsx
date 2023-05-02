@@ -1,24 +1,86 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import useFetchPokemon from "./logic/useFetchPokemon";
+import Pokedex from "./components/Pokedex";
+import useFetchTypes from "./logic/useFetchTypes";
+import useFetchPokemonsByType from "./logic/useFetchPokemonsByType";
+import useSearchBar from "./logic/useSearchBar";
+import { Banner } from "./components/Banner";
+import "./App.css";
+import { IInfoPokemon } from "./interface";
 
 function App() {
+
+  const [pokemonList, setPokemonList] = useState<IInfoPokemon[]>([]);
+  // Load pokemons
+  const { pokemon, handleFetch, prev, next, count } = useFetchPokemon();
+  // Load types for select
+  const { types } = useFetchTypes();
+  // Filter for type
+  const { selectedType, setSelectedType, pokemonByType } = useFetchPokemonsByType();
+  // Drop down options
+  const list = types.map((value) => <option key={value.name} value={value.url}>{value.name.toUpperCase()}</option>);
+  // SearchBar
+  const [search, setSearch] = useState('');
+  const { searchedBar } = useSearchBar(search);
+
+  useEffect(() => {
+    if(searchedBar.length === 0) {
+      return setPokemonList(pokemon);
+    }
+    setPokemonList(searchedBar);
+  }, [searchedBar, pokemon])
+
+  useEffect(() => {
+    setPokemonList(pokemon);
+  }, [pokemon])
+  
+  let hanldePageChange = (url:string) => {
+    handleFetch(url);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <Banner />
+
+      {/* Select type */}
+      <div className="custom-select">
+        <select value={selectedType} onChange={(ev) => {
+          setSelectedType(ev.target.value);
+        }}>
+          <option value=''>Select a type</option>
+          {list}
+        </select>
+      </div>
+
+      <hr />
+
+      {/* Search box */}
+      <input
+        className={'Bar'}
+        type="text"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        placeholder="Poke Search"
+      />
+
+      {/* Conditional render for cards */}
+      {
+        !selectedType 
+          ? <Pokedex pokemon={pokemonList} />
+          : <Pokedex pokemon={pokemonByType} />
+      }
+
+      {/* Pagination */}
+      <div className="pagContainer">
+        {
+          prev && !search && <button className="pagBttns" onClick={() => hanldePageChange(prev as string)}>Prev</button>
+        }
+        {
+          next && !search && <button className="pagBttns" onClick={() => hanldePageChange(next as string)}>Next</button>
+        }
+      </div>
+      <p>{count}</p>
     </div>
   );
 }
