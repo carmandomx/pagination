@@ -5,9 +5,9 @@ export interface IInfoPokemon {
 
 export interface IListResults<T> {
     count: number;
-    next: string;
-    previous: null
-    results: T[]
+    next: null | string;
+    previous: null | string;
+    results: T[];
 }
 
 interface IPokeType {

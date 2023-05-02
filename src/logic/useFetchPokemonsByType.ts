@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { IInfoPokemon, ITypeDetails } from "../interface";
 
 const useFetchPokemonsByType = () => {
-    // Filtro por select
+    // Select filter
     const [selectedType, setSelectedType] = useState<string>('');
     const [pokemonByType, setPokemonByType] = useState<IInfoPokemon[]>([]);
 
@@ -11,13 +11,13 @@ const useFetchPokemonsByType = () => {
             const req = await fetch(selectedType);
             const data: ITypeDetails = await req.json();
 
-            // Lista de pokemon filtrados
+            // List of pokemon filter
             const mappedData = data.pokemon.map((value) => value.pokemon);
-            // Actualizar el estado y limitar a 10 pokemon
-            setPokemonByType(mappedData.slice(0,18));
+            // Update state and limit to 9 cards
+            setPokemonByType(mappedData.slice(0,9));
         }
 
-        // Guardia en caso de que sea falsy
+        // Guard in falsy case
         if(selectedType) {
             fn().catch(console.error);
         }

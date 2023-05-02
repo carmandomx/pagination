@@ -11,6 +11,7 @@ const useSearchBar = (search: string) => {
         return;
       }
       
+      // Search by name or id number
       const url = isNaN(Number(search))
         ? `https://pokeapi.co/api/v2/pokemon/${search.toLowerCase()}`
         : `https://pokeapi.co/api/v2/pokemon/${Number(search)}`;

@@ -9,4 +9,4 @@ I will grade this project as 80% Design/Markup/Styles implementation and 20% Rea
 
 There's a lot of inspiration in the internet about a Pokedex and Pagination so there's no excuse about it.
 
-Live page [here]().
+Live page [here](https://transcendent-lamington-fc3875.netlify.app/).

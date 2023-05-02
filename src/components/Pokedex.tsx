@@ -7,6 +7,7 @@ type Props = {
 };
 
 const Pokedex = ({ pokemon }: Props) => {
+  // Render cards
   const list = pokemon.map((value) => (
     <Pokemon name={value.name} url={value.url} key={value.name} />
   ));
