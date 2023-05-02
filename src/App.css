@@ -109,7 +109,7 @@
   grid-template-columns: 1fr;
 }
 
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 533px) {
   .Pokedex{
     grid-template-columns: repeat(2, 1fr);
   }
@@ -158,3 +158,24 @@ h5, h6 {
   border-radius: 8px;
 }
 
+/* PAgination buttons */
+.pagContainer {
+  display: flex;
+  column-gap: 8px;
+}
+
+.pagBttns {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #13789c;
+  cursor: pointer;
+}
+
+.pagBttns:hover {
+  background-color: #69b8d5;
+}

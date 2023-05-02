@@ -72,15 +72,15 @@ function App() {
       }
 
       {/* Pagination */}
-      <h3>{count}</h3>
-
-      {
-        prev && !search && <button onClick={() => hanldePageChange(prev as string)}>Prev</button>
-      }
-      {
-        next && !search && <button onClick={() => hanldePageChange(next as string)}>Next</button>
-      }
-
+      <div className="pagContainer">
+        {
+          prev && !search && <button className="pagBttns" onClick={() => hanldePageChange(prev as string)}>Prev</button>
+        }
+        {
+          next && !search && <button className="pagBttns" onClick={() => hanldePageChange(next as string)}>Next</button>
+        }
+      </div>
+      <p>{count}</p>
     </div>
   );
 }
