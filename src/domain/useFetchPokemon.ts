@@ -13,7 +13,7 @@ const useFetchPokemon = () =>{
         return setPokemon(data.results.slice(0,9))
     }
     useEffect(()=>{
-        fetchOnlyNinePokemons().catch(console.error);
+            fetchOnlyNinePokemons().catch(console.error);
       },[currentPage])
 
     return { pokemon, fetchOnlyNinePokemons, currentPage, setCurrentPage}
