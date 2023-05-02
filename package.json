@@ -39,5 +39,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "Try to not overload components, use your customHooks to work with businessLogic.\r Tip: I would not consider Pagination as business logic but try to build a customHook around this logic.",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "keywords": []
 }

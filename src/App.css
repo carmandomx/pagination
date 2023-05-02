@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+body{
+  background-color: black;
 }
 
 .App-logo {
@@ -35,4 +43,646 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Pokedex{
+  margin-top: 16px;
+  padding: 8px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 16px;
+  max-width: 790px;
+}
+
+
+.pokemon-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 300px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.pokedex-number,
+.generation {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.pokedex-number {
+  align-self: flex-start;
+}
+
+.generation {
+  align-self: flex-end;
+}
+
+.pokeball {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  background-image: url("https://www.pngplay.com/wp-content/uploads/2/Pokeball-PNG-Pic-Background.png");
+  background-repeat: no-repeat;
+  background-size: 180px;
+  background-position: center;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.pokemon-image {
+  position: absolute;
+  bottom: 90px;
+  width: 70%;
+  height: 70%;
+  background-repeat: no-repeat;
+  background-size: 100px;
+  background-position: center;
+  z-index: 2;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  z-index: 3;
+  margin-right: auto;
+}
+
+.card-info {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.type{
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+  width: 70px;
+}
+
+.name{
+  margin: auto;
+}
+
+.types{
+  gap: 10px;
+}
+
+.head{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  gap: 55px;
+}
+
+.button {
+  background-color: #6c757d; /* Gray */
+  border: none;
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.button:hover {
+  background-color: #5a6268; /* Darker gray */
+}
+
+.button:active {
+  transform: scale(0.95); /* Slightly smaller when clicked */
+}
+
+.button:disabled{
+  background-color: #9e9fa1
+}
+
+.select {
+  margin-top: 10px;
+  appearance: none;
+  background-color: #6c757d; /* Gray */
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  padding-right: 48px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.select:hover {
+  background-color: #5a6268; /* Darker gray */
+}
+
+.select:active {
+  transform: scale(0.95); /* Slightly smaller when clicked */
+}
+
+.fire{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  
+  background-color: #f2d1b7;
+}
+.normal{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  
+  background-color: #dcdcd7;
+}
+.water{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  
+  background-color: #b9cefb;
+}
+.electric{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  
+  background-color: #f8eec5;
+}
+.grass{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  
+  background-color: #d4f7c0;
+}
+.ice{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  
+  background-color: #e7faf9;
+}
+.fighting{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  
+  background-color: #f4c9c8;
+}
+.poison{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  
+  background-color: #f7c6f6;
+}
+.ground{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  
+  background-color: #f6e7c2;
+}
+.flying{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  
+  background-color: #d4c9f3;
+}
+.psychic{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  
+  background-color: #fac6d6;
+}
+.bug{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  
+  background-color: #e6f286;
+}
+.rock{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  
+  background-color: #f8f0c5;
+}
+.ghost{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  
+  background-color: #d7c0f6;
+}
+.dragon{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  
+  background-color: #dccfff;
+}
+.dark{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  
+  background-color: #c3b0a3;
+}
+.steel{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  
+  background-color: #f9f9ff;
+}
+.fairy{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  
+  background-color: #ffd5ea;
+}
+
+
+.type-fire{
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+  width: 70px;
+  color: white;
+  background-color: #EE8130;
+}
+
+.type-normal{
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+  width: 70px;
+  color: white;
+  background-color: #A8A77A;
+}
+
+.type-water{
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+  width: 70px;
+  color: white;
+  background-color: #6390F0;
+}
+
+.type-electric{
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+  width: 70px;
+  color: white;
+  background-color: #F7D02C;
+}
+
+.type-grass{
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+  width: 70px;
+  color: white;
+  background-color: #7AC74C;
+}
+
+.type-ice{
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+  width: 70px;
+  color: white;
+  background-color: #96D9D6;
+}
+
+.type-fighting{
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+  width: 70px;
+  color: white;
+  background-color: #C22E28;
+}
+
+.type-poison{
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+  width: 70px;
+  color: white;
+  background-color: #A33EA1;
+}
+
+.type-ground{
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+  width: 70px;
+  color: white;
+  background-color: #E2BF65;
+}
+
+.type-flying{
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+  width: 70px;
+  color: white;
+  background-color: #A98FF3;
+}
+
+.type-psychic{
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+  width: 70px;
+  color: white;
+  background-color: #F95587;
+}
+
+.type-bug{
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+  width: 70px;
+  color: white;
+  background-color: #A6B91A;
+}
+
+.type-rock{
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+  width: 70px;
+  color: white;
+  background-color: #B6A136;
+}
+
+.type-ghost{
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+  width: 70px;
+  color: white;
+  background-color: #735797;
+}
+
+.type-dragon{
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+  width: 70px;
+  color: white;
+  background-color: #6F35FC;
+}
+
+.type-dark{
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+  width: 70px;
+  color: white;
+  background-color: #705746;
+}
+
+.type-steel{
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+  width: 70px;
+  color: white;
+  background-color: #B7B7CE;
+}
+
+.type-fairy{
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 2px;
+  width: 70px;
+  color: white;
+  background-color: #D685AD;
 }
