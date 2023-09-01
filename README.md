@@ -17,4 +17,4 @@ The Grid of Pokemons includes a Pagination component that will allow the user to
 The page is responsive. While it shows a grid of 3x3 in the desktop version,  mobile version only will show a single column
 
 **Live Demo:**
-You are able to watch the live demo of the project here [here](https://braulio95.github.io/pokedex-with-react/)
+You are able to watch the live demo of the project [here](https://braulio95.github.io/pokedex-with-react/)
