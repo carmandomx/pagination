@@ -1,15 +1,3 @@
-# Rules
-
-No external libraries (done)
-
-You must use React + TS for this project (done)
-
-App should be hosted somewhere (for ex. GH Pages/Netlify)
-
-You must fork this repo: https://github.com/carmandomx/pagination (done)
-
-You must read the README.md in the base repo. (done)
-
 # Requirements
 
 When the app loads or refreshes the first 9 Pokemons must show (done)
@@ -35,4 +23,4 @@ Challenge: Create a toggle that will cycle through the default sprite and shiny 
 
 Deliverable:
 
-Create a PR to the base repo and paste the link [here](https://braulioestrada-ksquare.github.io/pagination/)
+Create a PR to the base repo and paste the link [here](https://braulio95.github.io/pagination/)
