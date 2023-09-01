@@ -1,26 +1,20 @@
-# Requirements
+# PokeDex with React!!!
+Welcome to this project, this is an app made entirely in React and gets its resources from the PokeApi. It shows 9 pokemons in the same page with the next information:
 
-When the app loads or refreshes the first 9 Pokemons must show (done)
+ - Order  
+ - Name  
+ - Height  
+ - Generation when it was introduced  
+ - Types 
+ - Image
 
-Each Pokemon Card, must containt the following information(done):
-    Order (done)
-    Name (done)
-    Height (done)
-    Weight (done)
-    Generation when it was introduced (done)
-    Types (done)
-    Default Sprite (done)
+The app has an Input element that acts as a search bar that can take numbers or strings and the Grid of Pokemons needs to change to reflect the results.
 
-The Types of the Pokemon must show a different background color based on it, you can take inspiration from images of the game. **(done)**
+The app implements a dropdown element with all the types of pokemons as options and whenever a type is selected the Grid of Pokemons needs to change to reflect the results.
 
-The app needs an Input element that acts as a search bar that can take numbers or strings and the Grid of Pokemons needs to change to reflect the results**(done).**
+The Grid of Pokemons includes a Pagination component that will allow the user to sort throught all the possible results, the page size must be always 9. 
 
-The app needs a dropdown element with all the types of pokemons as options and whenever a type is selected the Grid of Pokemons needs to change to reflect the results **(done).**
+The page is responsive. While it shows a grid of 3x3 in the desktop version,  mobile version only will show a single column
 
-The Grid of Pokemons must include a Pagination component that will allow the user to sort throught all the possible results, the page size must be always 9. **(done).**
-
-Challenge: Create a toggle that will cycle through the default sprite and shiny sprite if available.
-
-Deliverable:
-
-Create a PR to the base repo and paste the link [here](https://braulio95.github.io/pagination/)
+**Live Demo:**
+You are able to watch the live demo of the project here [here](https://braulio95.github.io/pagination/)
