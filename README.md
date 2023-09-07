@@ -1,10 +1,20 @@
-# Components
+# PokeDex with React!!!
+Welcome to this project, this is an app made entirely in React and gets its resources from the PokeApi. It shows 9 pokemons in the same page with the next information:
 
-Try to not overload components, use your customHooks to work with businessLogic.
-Tip: I would not consider Pagination as business logic but try to build a customHook around this logic.
+ - Order  
+ - Name  
+ - Height  
+ - Generation when it was introduced  
+ - Types 
+ - Image
 
-# Design
+The app has an Input element that acts as a search bar that can take numbers or strings and the Grid of Pokemons needs to change to reflect the results.
 
-I will grade this project as 80% Design/Markup/Styles implementation and 20% React/JS.
+The app implements a dropdown element with all the types of pokemons as options and whenever a type is selected the Grid of Pokemons needs to change to reflect the results.
 
-There's a lot of inspiration in the internet about a Pokedex and Pagination so there's no excuse about it.
+The Grid of Pokemons includes a Pagination component that will allow the user to sort throught all the possible results, the page size must be always 9. 
+
+The page is responsive. While it shows a grid of 3x3 in the desktop version,  mobile version only will show a single column
+
+**Live Demo:**
+You are able to watch the live demo of the project [here](https://braulio95.github.io/pokedex-with-react/)
